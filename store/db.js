@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectToDB = async function () {
-  const uri =
-    "mongodb+srv://renaissance:renaissance@cluster0.lplcs.mongodb.net/sellIt?retryWrites=true&w=majority";
+  const uri = process.env.MONGO_URL;
   await mongoose
     .connect(uri)
     .then(() => console.info(`Connected to mongoDB...`))

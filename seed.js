@@ -175,8 +175,7 @@ const categories = [
 ];
 
 async function seed() {
-  const uri =
-    "mongodb+srv://renaissance:renaissance@cluster0.lplcs.mongodb.net/sellIt?retryWrites=true&w=majority";
+  const uri = process.env.MONGO_URL;
   await mongoose.connect(uri);
 
   // await Category.deleteMany({});
